@@ -38,7 +38,7 @@ export default function Textform(props) {
     text.select();
     navigator.clipboard.writeText(text.value);
   };
-  const [text, setText] = useState('Enter text here2');
+  const [text, setText] = useState('Enter text here');
   return (
     <div>
       <h1>{props.heading}</h1>

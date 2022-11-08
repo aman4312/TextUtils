@@ -5,7 +5,6 @@ export default function Textform(props) {
     let n = text.toUpperCase();
     setText(n);
     props.showAlert('converted to upper case', 'Success');
-   
   };
   const handleLoClick = () => {
     console.log('Lowercase was clicked' + text);
@@ -80,8 +79,13 @@ export default function Textform(props) {
       <div className="container">
         <h2>Summary</h2>
         <p>
-          {text.split(' ').length}words and {text.length}charcters and the user
-          can read it in {(1 / 125) * text.split(' ').length} minutes.
+          {
+            text.split(/\s+/).filter((element) => {
+              return element.length !== 0;
+            }).length
+          }
+          words and {text.length}charcters and the user can read it in{' '}
+          {(1 / 125) * text.split(' ').length} minutes.
         </p>
       </div>
     </div>

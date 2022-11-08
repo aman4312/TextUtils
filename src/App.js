@@ -3,8 +3,8 @@ import Navbar from './component/Navbar';
 import Textform from './component/Textform';
 //import React, { useState } from 'react';
 import Alert from './component/Alert';
-//import About from './component/About';
-//import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import About from './component/About';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   // const [alert, setAlert] = useState(null);
   // const showAlert = (message, type) => {
@@ -27,22 +27,22 @@ function App() {
   // };
   return (
     <>
-      {/* <Router> */}
-      <Navbar title="Textutils" />
-      <Alert alert={alert} />
+      <Router>
+        <Navbar title="Textutils" />
+        <Alert alert={alert} />
 
-      <div className="container">
-        {/* <Switch>
+        <div className="container">
+          <Switch>
             <Route exact path="/about">
               <About />
-            </Route> */}
+            </Route>
 
-        {/* <Route exact path="/"> */}
-        <Textform heading="Enter the text to analyze below" />
-        {/* </Route>
-          </Switch> */}
-      </div>
-      {/* </Router> */}
+            <Route exact path="/">
+              <Textform heading="Enter the text to analyze below" />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </>
   );
 }
